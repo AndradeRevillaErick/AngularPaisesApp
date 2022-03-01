@@ -1,7 +1,7 @@
-<h2>Por Pais</h2>
+<h2 class="animate__animated animate__fadeInDown" >Por Pais</h2>
 <hr>
 
-<div>
+<div class="row">
     <div class="col">
         <app-pais-input
             (onEnter) = "buscar( $event )"
@@ -10,6 +10,22 @@
         </app-pais-input>
     </div>
 </div>
+
+<ul *ngIf="mostrarSugerencias" class="list-group">
+    <li *ngFor="let pais of paisesSugeridos" class="list-group-item list-group-item-action">
+        <a class="nav-link"
+            [routerLink]="['/pais', pais.cca2 ]">
+            {{ pais.name.common }}
+        </a>
+    </li>
+    <li class="list-group-item list-group-item-action"
+        (click) = "buscarSugerido( termino )"
+        >
+        <a class="nav-link">
+        Buscar: "{{ termino }}"
+        </a>
+    </li>
+</ul>
 
 <hr>
 

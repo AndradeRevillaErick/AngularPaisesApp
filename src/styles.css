@@ -6,3 +6,15 @@
 .mr-1{
     margin-right: 5px;
 }
+
+.animate__animated.animate__zoomIn {
+    --animate-duration: .5s;
+}
+
+.animate__animated.animate__fadeInDown {
+    --animate-duration: .5s;
+}
+
+.traducciones{
+    animation-duration: 2s;
+}
